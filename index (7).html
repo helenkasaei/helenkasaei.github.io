@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helen (Zahra) Kasaei · Technology Management &amp; Innovation Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1D1D1F;
+    --paper:#FFFFFF;
+    --accent:#2F5D50;
+    --accent-soft:#E4EDE9;
+    --slate:#6E7277;
+    --line:#E7E5E0;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", "Segoe UI", Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    letter-spacing:-0.008em;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent); text-decoration:underline; text-decoration-color:#B9CFC7; text-underline-offset:2px;}
+  a:hover{text-decoration-color:var(--accent);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+
+  .page{
+    max-width:920px;
+    margin:0 auto;
+    padding:64px 24px 80px;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:56px;
+    align-items:start;
+  }
+
+  /* ---------- sidebar ---------- */
+  .sidebar{
+    position:sticky;
+    top:48px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .avatar{
+    width:120px; height:120px;
+    border-radius:50%;
+    overflow:hidden;
+    margin-bottom:18px;
+  }
+  .avatar img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .sidebar h1{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    font-size:1.35rem;
+    margin:0 0 6px;
+    line-height:1.3;
+  }
+  .sidebar .subtitle{
+    font-size:0.86rem;
+    color:var(--slate);
+    margin:0 0 4px;
+  }
+  .sidebar .affiliation{
+    font-size:0.86rem;
+    margin:0 0 20px;
+  }
+  .sidebar .social{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    font-size:0.84rem;
+  }
+
+  /* ---------- main content ---------- */
+  main section{padding:0 0 30px;}
+  main section + section{border-top:1px solid var(--line); padding-top:26px;}
+  main h2{
+    font-weight:600;
+    font-size:0.98rem;
+    margin:0 0 16px;
+  }
+
+  .lede{font-size:0.92rem; color:#33383D; max-width:60ch;}
+
+  .interests{margin:0; padding-left:18px;}
+  .interests li{font-size:0.9rem; margin-bottom:6px;}
+
+  /* frameworks */
+  .fw-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px 22px;
+  }
+  .fw-item{display:flex; gap:11px; align-items:flex-start;}
+  .fw-icon{flex:none; width:38px; height:38px;}
+  .fw-icon svg{width:100%; height:100%;}
+  .fw-text h3{font-size:0.86rem; font-weight:600; margin:0 0 2px;}
+  .fw-text p{font-size:0.8rem; color:var(--slate); margin:0; line-height:1.45;}
+
+  /* education */
+  .edu-item{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:14px;
+    padding:9px 0;
+  }
+  .edu-item + .edu-item{border-top:1px solid var(--line);}
+  .edu-item .when{color:var(--slate); font-size:0.82rem; padding-top:1px;}
+  .edu-item h3{font-weight:600; font-size:0.9rem; margin:0 0 3px;}
+  .edu-item .meta{font-size:0.82rem; color:var(--slate); margin-bottom:3px;}
+  .edu-item .gpa{font-size:0.78rem; color:var(--slate);}
+
+  /* publications */
+  .pub{padding:12px 0;}
+  .pub + .pub{border-top:1px solid var(--line);}
+  .pub .tag{
+    display:inline-block;
+    font-size:0.7rem;
+    color:var(--accent);
+    background:var(--accent-soft);
+    padding:1px 8px;
+    border-radius:3px;
+    margin-bottom:7px;
+  }
+  .pub h3{font-weight:600; font-size:0.92rem; margin:0 0 7px; max-width:52ch;}
+  .pub p{margin:0 0 8px; color:#33383D; font-size:0.87rem; max-width:66ch;}
+  .pub .kw{font-size:0.77rem; color:var(--slate);}
+  .pub .dl{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:0.8rem; font-weight:500;
+    color:#9B3B57; text-decoration:none;
+    background:#FBE7ED; border:1px solid #F3C9D6;
+    padding:6px 12px; border-radius:6px;
+    margin-top:4px;
+  }
+  .pub .dl:hover{background:#F7D9E2;}
+
+  /* background */
+  .bg-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .bg-grid h3{font-weight:600; font-size:0.82rem; margin:0 0 8px; color:var(--slate);}
+  .bg-grid ul{margin:0; padding-left:16px;}
+  .bg-grid li{margin-bottom:5px; font-size:0.85rem;}
+
+  @media (max-width:760px){
+    .page{grid-template-columns:1fr; padding:44px 22px 60px; gap:34px;}
+    .sidebar{position:static; align-items:flex-start; text-align:left;}
+    .fw-grid{grid-template-columns:1fr;}
+    .edu-item{grid-template-columns:1fr; gap:3px;}
+    .bg-grid{grid-template-columns:1fr; gap:16px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <aside class="sidebar">
+    <div class="avatar"><img src="profile.jpg" alt="Helen (Zahra) Kasaei"></div>
+    <h1>Helen (Zahra) Kasaei</h1>
+    <p class="subtitle">M.Sc. in Technology Management</p>
+    <p class="affiliation"><a href="https://www.topuniversities.com/universities/university-isfahan?utm_source=chatgpt.com">University of Isfahan</a></p>
+    <div class="social">
+      <a href="mailto:helenkasaei@gmail.com">Email Me</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <section id="about">
+      <h2>About</h2>
+      <p class="lede">
+        My research centers on technology management, innovation strategy, and product innovation, with an emphasis on
+        supporting strategic decision-making under technological and market uncertainty, including disruptive and
+        radical innovation, product development, technology strategy, and multi-criteria decision-making.
+      </p>
+    </section>
+
+    <section id="interests">
+      <h2>Research Interests</h2>
+      <ul class="interests">
+        <li>Innovation Management and Strategy</li>
+        <li>Radical vs. Incremental Innovation; Architectural &amp; Disruptive Innovation</li>
+        <li>Multi-Criteria Decision Making (TOPSIS, Kano, AHP)</li>
+        <li>Business Growth Strategies (Ansoff Matrix)</li>
+        <li>Circular Economy in the Home Appliances Industry</li>
+      </ul>
+    </section>
+
+    <section id="frameworks">
+      <h2>Frameworks I Work With</h2>
+      <div class="fw-grid">
+
+        <div class="fw-item">
+          <div class="fw-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="40" height="40" stroke="#1D1D1F" stroke-width="1.3"/>
+              <line x1="28" y1="8" x2="28" y2="48" stroke="#1D1D1F" stroke-width="1.3"/>
+              <line x1="8" y1="28" x2="48" y2="28" stroke="#1D1D1F" stroke-width="1.3"/>
+              <rect x="8" y="8" width="20" height="20" fill="#2F5D50"/>
+            </svg>
+          </div>
+          <div class="fw-text">
+            <h3>Ansoff Growth Matrix</h3>
+            <p>Market penetration, market development, product development, and diversification as growth pathways.</p>
+          </div>
+        </div>
+
+        <div class="fw-item">
+          <div class="fw-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="40" height="40" stroke="#1D1D1F" stroke-width="1.3"/>
+              <line x1="28" y1="8" x2="28" y2="48" stroke="#1D1D1F" stroke-width="1.3"/>
+              <line x1="8" y1="28" x2="48" y2="28" stroke="#1D1D1F" stroke-width="1.3"/>
+              <rect x="28" y="28" width="20" height="20" fill="#E4EDE9"/>
+              <line x1="28" y1="28" x2="48" y2="48" stroke="#2F5D50" stroke-width="1.3"/>
+            </svg>
+          </div>
+          <div class="fw-text">
+            <h3>Innovation Matrix</h3>
+            <p>Classifies incremental, radical, disruptive, and architectural innovation by technology and market.</p>
+          </div>
+        </div>
+
+        <div class="fw-item">
+          <div class="fw-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="8" y1="48" x2="48" y2="48" stroke="#1D1D1F" stroke-width="1.2"/>
+              <line x1="8" y1="48" x2="8" y2="8" stroke="#1D1D1F" stroke-width="1.2"/>
+              <path d="M10 44 Q28 44 46 12" stroke="#2F5D50" stroke-width="1.6" fill="none"/>
+              <path d="M10 44 Q28 34 46 26" stroke="#9AA0A6" stroke-width="1.4" fill="none"/>
+              <path d="M10 20 Q28 34 46 44" stroke="#9AA0A6" stroke-width="1.4" fill="none"/>
+            </svg>
+          </div>
+          <div class="fw-text">
+            <h3>Kano Model</h3>
+            <p>Separates must-be, one-dimensional, and attractive product features by their effect on satisfaction.</p>
+          </div>
+        </div>
+
+        <div class="fw-item">
+          <div class="fw-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="8" y1="48" x2="48" y2="48" stroke="#1D1D1F" stroke-width="1.2"/>
+              <rect x="13" y="30" width="7" height="18" fill="#9AA0A6"/>
+              <rect x="24.5" y="18" width="7" height="30" fill="#2F5D50"/>
+              <rect x="36" y="24" width="7" height="24" fill="#9AA0A6"/>
+            </svg>
+          </div>
+          <div class="fw-text">
+            <h3>MCDM: TOPSIS &amp; AHP</h3>
+            <p>Ranks strategic options against multiple weighted criteria to support consistent decision-making.</p>
+          </div>
+        </div>
+
+        <div class="fw-item">
+          <div class="fw-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="28" cy="28" r="20" stroke="#1D1D1F" stroke-width="1.3"/>
+              <path d="M20 28.5l5 5 11-11" stroke="#2F5D50" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="fw-text">
+            <h3>SMART Criteria</h3>
+            <p>Specific, measurable, achievable, relevant, and time-bound objectives for evaluating strategy.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="edu-item">
+        <div class="when">2026</div>
+        <div>
+          <h3>M.Sc. in Technology Management</h3>
+          <div class="meta"><a href="https://www.topuniversities.com/universities/university-isfahan?utm_source=chatgpt.com">University of Isfahan</a>, Isfahan, Iran</div>
+          <div class="gpa">GPA: 17.79 / 20</div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="when">2024</div>
+        <div>
+          <h3>B.Sc. in Industrial Management</h3>
+          <div class="meta"><a href="https://www.topuniversities.com/universities/university-isfahan?utm_source=chatgpt.com">University of Isfahan</a>, Isfahan, Iran</div>
+          <div class="gpa">GPA: 16.96 / 20</div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="when">2020</div>
+        <div>
+          <h3>Diploma in Humanities</h3>
+          <div class="meta">National Organization for Development of Exceptional Talents (<a href="https://www.linkedin.com/school/iransampad/about/">NODET / Sampad</a>), Isfahan, Iran</div>
+          <div class="gpa">GPA: 18.48 / 20</div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="publications">
+      <h2>Publications &amp; Thesis</h2>
+
+      <div class="pub">
+        <span class="tag">Master's Thesis</span>
+        <h3>An Integrated Decision-Making Framework for Innovation and Product Strategy</h3>
+        <p>
+          Proposes a combined framework, built on the Innovation Matrix and the Ansoff Matrix, alongside SMART
+          criteria and multi-criteria decision-making, for selecting and prioritizing innovation and product
+          strategies under shifting market, technological, and customer conditions. Applied as a case study to
+          the Entekhab Industrial Group.
+        </p>
+      </div>
+
+      <div class="pub">
+        <span class="tag">Working Paper</span>
+        <h3>An Integrated Framework for Explaining Innovation and Product Development Strategies Based on the Innovation Matrix, Ansoff Matrix, and Kano Model</h3>
+        <p>
+          Brings the Innovation Matrix, the Ansoff Matrix, and the Kano Model together into one conceptual
+          framework: the Kano Model surfaces which customer needs actually matter, the Ansoff Matrix turns that
+          understanding into a growth direction, and the Innovation Matrix guides how new value gets created.
+        </p>
+        <p class="kw">Innovation Matrix · Ansoff Matrix · Kano Model · Product Development</p>
+        <a class="dl" href="paper-integrated-framework.pdf" download><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download PDF</a>
+      </div>
+
+      <div class="pub">
+        <span class="tag">Working Paper</span>
+        <h3>From the Yakhchal to the Two-Door Refrigerator: Historical Foundations, Market Dynamics, and an Incremental Innovation Strategy for the Domestic Refrigeration Industry</h3>
+        <p>
+          Traces the domestic refrigerator's technology from ancient Persian yakhchal ice houses to today's
+          two-door unit, then uses field surveys and market data to position the industry on the technology–market
+          innovation matrix and the Ansoff growth matrix, concluding that incremental improvement and market
+          penetration, not radical redesign, is the appropriate strategy.
+        </p>
+        <p class="kw">Incremental Innovation · Technology Maturity · Competitive Positioning</p>
+        <a class="dl" href="paper-refrigerator-industry.pdf" download><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download PDF</a>
+      </div>
+
+    </section>
+
+    <section id="background">
+      <h2>Background</h2>
+      <div class="bg-grid">
+        <div>
+          <h3>Experience</h3>
+          <ul>
+            <li>Quality Assurance Department, <a href="https://www.linkedin.com/company/irisa/about/">IRISA</a>: quality improvement, strategic planning, and innovation-focused initiatives</li>
+            <li>Admitted through the National Exceptional Talents Admission Scheme</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Languages</h3>
+          <ul>
+            <li>Persian (Native)</li>
+            <li>English</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>

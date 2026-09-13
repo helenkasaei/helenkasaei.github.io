@@ -6,7 +6,7 @@
 <title>Helen (Zahra) Kasaei · Technology Management &amp; Innovation Strategy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#26241F;
@@ -15,7 +15,7 @@
     --red:#B23A2E;
     --slate:#6E6A5F;
     --line:#DEDACD;
-    --serif: "EB Garamond", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -23,7 +23,7 @@
     margin:0;
     background:var(--paper);
     color:var(--ink);
-    font-family:var(--serif);
+    font-family:var(--sans);
     font-size:18px;
     line-height:1.6;
   }
@@ -61,10 +61,10 @@
     align-items:center;
   }
   .intro .role{font-size:1.08rem; margin:0 0 4px;}
-  .intro .affiliation{font-style:italic; color:var(--slate); margin:0 0 18px;}
+  .intro .affiliation{color:var(--slate); margin:0 0 18px;}
   .intro ul{margin:0; padding-left:20px;}
   .intro li{margin-bottom:8px; font-size:1rem;}
-  .intro li em{font-style:italic;}
+  .intro li em{font-style:normal; font-weight:600;}
 
   .photo-col img{
     width:100%;
@@ -128,7 +128,7 @@
   .edu-item + .edu-item{border-top:1px solid var(--line);}
   .edu-item .when{color:var(--blue); font-size:0.98rem;}
   .edu-item h3{font-weight:600; font-size:1.02rem; margin:0 0 3px;}
-  .edu-item .meta{font-style:italic; color:var(--slate); font-size:0.95rem; margin-bottom:3px;}
+  .edu-item .meta{color:var(--slate); font-size:0.95rem; margin-bottom:3px;}
   .edu-item .gpa{font-size:0.9rem; color:var(--slate);}
 
   /* publications */
@@ -145,7 +145,7 @@
   }
   .pub h3{font-weight:600; font-size:1.06rem; margin:0 0 8px; max-width:56ch;}
   .pub p{margin:0 0 9px; color:var(--ink); font-size:0.96rem; max-width:70ch;}
-  .pub .kw{font-size:0.86rem; color:var(--slate); font-style:italic;}
+  .pub .kw{font-size:0.86rem; color:var(--slate);}
   .pub .dl{
     display:inline-flex; align-items:center; gap:7px;
     font-size:0.94rem; font-weight:500;

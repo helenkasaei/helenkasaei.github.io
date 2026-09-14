@@ -157,6 +157,7 @@
     gap:8px;
     font-size:1rem;
   }
+  .contact-block .contact-row{margin-bottom:10px;}
 
   /* ---------- sections ---------- */
   section{padding:18px 0;}
@@ -238,6 +239,8 @@
     color:var(--slate);
     font-size:0.9rem;
   }
+  footer a{color:var(--slate);}
+  footer .sep{margin:0 8px;}
 
   @media (max-width:720px){
     .intro{grid-template-columns:1fr;}
@@ -301,10 +304,18 @@
       <img src="profile.jpg" alt="Helen Kasaei">
       <div class="contact-block">
         <h2>Contact</h2>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=helenkasaei@gmail.com" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
-          helenkasaei@gmail.com
-        </a>
+        <div class="contact-row">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=helenkasaei@gmail.com" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+            helenkasaei@gmail.com
+          </a>
+        </div>
+        <div class="contact-row">
+          <a href="https://www.linkedin.com/in/helenkasaei" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            linkedin.com/in/helenkasaei
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -503,7 +514,7 @@
 
 </div>
 
-<footer>Helen Kasaei · helenkasaei@gmail.com</footer>
+<footer>Helen Kasaei · <a href="https://mail.google.com/mail/?view=cm&fs=1&to=helenkasaei@gmail.com" target="_blank" rel="noopener">helenkasaei@gmail.com</a><span class="sep">·</span><a href="https://www.linkedin.com/in/helenkasaei" target="_blank" rel="noopener">LinkedIn</a></footer>
 
 <script>
   var moonIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>';

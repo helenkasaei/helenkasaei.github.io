@@ -48,8 +48,9 @@
   }
   #theme-toggle{
     position:absolute;
-    top:44px; right:28px;
-    width:36px; height:36px;
+    top:50%; right:28px;
+    transform:translateY(-50%);
+    width:32px; height:32px;
     border-radius:50%;
     border:1px solid var(--line);
     background:none;
@@ -57,9 +58,10 @@
     display:flex; align-items:center; justify-content:center;
     cursor:pointer;
   }
-  #theme-toggle svg{width:18px; height:18px;}
+  #theme-toggle svg{width:16px; height:16px;}
   #theme-toggle:hover{border-color:var(--blue); color:var(--blue);}
   nav.tabs{
+    position:relative;
     border-top:1px solid var(--line);
     border-bottom:1px solid var(--line);
     padding:14px 0;
@@ -120,18 +122,18 @@
 
 <header class="top">
   <div class="wrap">
-    <button id="theme-toggle" aria-label="Toggle dark mode" onclick="
-      var html=document.documentElement;
-      var dark=html.getAttribute('data-theme')==='dark';
-      html.setAttribute('data-theme', dark ? 'light' : 'dark');
-      this.innerHTML = dark ? moonIcon : sunIcon;
-    "></button>
-    <h1>Helen (Zahra) Kasaei</h1>
+    <h1>Helen Kasaei</h1>
     <nav class="tabs">
       <a href="index.html">Home</a>
       <a href="index.html#research">Research</a>
       <a href="index.html#education">Education</a>
       <a href="cv.html" class="active">CV</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode" onclick="
+        var html=document.documentElement;
+        var dark=html.getAttribute('data-theme')==='dark';
+        html.setAttribute('data-theme', dark ? 'light' : 'dark');
+        this.innerHTML = dark ? moonIcon : sunIcon;
+      "></button>
     </nav>
   </div>
 </header>

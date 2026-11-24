@@ -3,250 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Helen Kasaei, M.Sc. candidate in Technology Management and Innovation at the University of Isfahan.">
-<title>Helen Kasaei</title>
-<style>
-  :root {
-    --ink:#26241F;
-    --paper:#FBFAF5;
-    --blue:#2A4D8F;
-    --red:#B23A2E;
-    --slate:#6E6A5F;
-    --line:#DEDACD;
-    --menu-hover:rgba(0,0,0,.045);
-    --serif:"Times New Roman", Times, serif;
-  }
-  html[data-theme="dark"] {
-    --ink:#EAE8E1;
-    --paper:#1B1C18;
-    --blue:#8FB0E8;
-    --red:#E28E82;
-    --slate:#A6A398;
-    --line:#3A3B34;
-    --menu-hover:rgba(255,255,255,.06);
-  }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body {
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--serif);
-    font-size:18px;
-    line-height:1.6;
-    transition:background .2s ease,color .2s ease;
-  }
-  a { color:var(--blue); text-decoration:none; }
-  a:hover { text-decoration:underline; }
-  a:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
-  .wrap { max-width:960px; margin:0 auto; padding:0 28px; }
-  header.top { padding:45px 0 0; text-align:center; position:relative; }
-  header.top h1 {
-    margin:0 0 28px;
-    color:var(--blue);
-    font-size:clamp(1.9rem,4.5vw,2.5rem);
-    font-weight:500;
-  }
-  #theme-toggle {
-    position:absolute;
-    top:50%;
-    right:28px;
-    transform:translateY(-50%);
-    width:36px;
-    height:36px;
-    border:1px solid var(--line);
-    border-radius:50%;
-    background:none;
-    color:var(--ink);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-  }
-  #theme-toggle svg { width:17px; height:17px; }
-  #theme-toggle:hover { color:var(--blue); border-color:var(--blue); }
-  nav.tabs {
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:13px 72px;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:38px;
-    font-size:1.02rem;
-  }
-  nav.tabs a { color:var(--blue); }
-  nav.tabs a.active { font-weight:600; text-decoration:underline; text-underline-offset:4px; }
-  .mobile-menu-btn {
-    display:none;
-    align-items:center;
-    gap:8px;
-    margin:0 auto;
-    padding:13px 0;
-    border:0;
-    background:none;
-    color:var(--ink);
-    font:inherit;
-    cursor:pointer;
-  }
-  .mobile-menu-btn svg { width:20px; height:20px; }
-  .mobile-menu {
-    display:none;
-    flex-direction:column;
-    margin:0 20px 15px;
-    border:1px solid var(--line);
-    border-radius:6px;
-    overflow:hidden;
-    background:var(--paper);
-    text-align:left;
-  }
-  .mobile-menu.open { display:flex; }
-  .mobile-menu a,.mobile-menu button {
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:12px 16px;
-    border:0;
-    border-bottom:1px solid var(--line);
-    background:none;
-    color:var(--ink);
-    text-align:left;
-    font:inherit;
-    cursor:pointer;
-  }
-  .mobile-menu a:hover { color:var(--blue); text-decoration:none; }
-  .mobile-menu button { border-bottom:0; background:var(--menu-hover); }
-  .mobile-menu button svg { width:18px; height:18px; }
-  .page-grid {
-    display:grid;
-    grid-template-columns:minmax(0, 1fr) 260px;
-    gap:58px;
-    align-items:start;
-    padding-top:34px;
-  }
-  .intro { padding:0 0 20px; }
-  .role { margin:0; font-size:1.08rem; }
-  .affiliation { margin:0 0 16px; color:var(--slate); font-style:italic; }
-  .intro ul { margin:12px 0 0; padding-left:21px; }
-  .intro li { margin:6px 0; }
-  .supervisor-note { margin:8px 0 0; color:var(--slate); font-size:.96rem; }
-  section { padding:17px 0 20px; }
-  section h2,.contact h2 {
-    margin:0 0 0;
-    color:var(--blue);
-    font-size:1.28rem;
-    font-weight:500;
-  }
-  section hr,.contact hr {
-    margin:5px 0 18px;
-    border:0;
-    border-top:1px solid var(--line);
-  }
-  ul.interests { margin:0; padding-left:21px; }
-  ul.interests li { margin:6px 0; }
-  .edu-item {
-    display:grid;
-    grid-template-columns:96px minmax(0,1fr);
-    gap:14px;
-    padding:10px 0 13px;
-  }
-  .edu-item + .edu-item { border-top:1px solid var(--line); }
-  .edu-years { color:var(--blue); font-size:.95rem; font-weight:600; }
-  .edu-item h3 { margin:0; font-size:1rem; font-weight:600; }
-  .edu-note { margin:0; color:var(--slate); font-size:.94rem; font-style:italic; }
-  .edu-school { margin:8px 0 0; }
-  .sidebar { padding-top:0; }
-  .portrait {
-    display:block;
-    width:100%;
-    max-height:365px;
-    object-fit:cover;
-    object-position:center top;
-  }
-  .contact { margin-top:22px; }
-  .contact h2 { font-size:1.12rem; }
-  .contact hr { margin-bottom:12px; }
-  .contact-row { margin:9px 0; }
-  .contact-row a {
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    color:var(--red);
-    font-size:1rem;
-  }
-  .contact-row svg { width:16px; height:16px; flex:none; }
-  .cv-link {
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    margin-top:10px;
-    color:var(--red);
-  }
-  footer {
-    margin-top:25px;
-    padding:19px 0 30px;
-    border-top:1px solid var(--line);
-    color:var(--slate);
-    text-align:center;
-    font-size:.9rem;
-  }
-  @media(max-width:720px) {
-    .wrap { padding:0 22px; }
-    header.top { padding-top:30px; }
-    #theme-toggle { top:33px; right:22px; }
-    nav.tabs { display:none; }
-    .mobile-menu-btn { display:flex; }
-    .page-grid { grid-template-columns:1fr; gap:24px; padding-top:25px; }
-    .sidebar { grid-row:1; }
-    .portrait { width:min(230px,70%); max-height:300px; margin:0 auto; }
-    .contact { max-width:420px; margin:20px auto 0; }
-    .main-column { grid-row:2; }
-    .edu-item { grid-template-columns:90px minmax(0,1fr); gap:10px; }
-  }
-  @media(prefers-reduced-motion:reduce) {
-    html { scroll-behavior:auto; }
-  }
-</style>
+<meta name="description" content="Helen Kasaei — M.Sc. candidate in Technology Management and Innovation at the University of Isfahan.">
+<title>Helen Kasaei · Technology Management &amp; Innovation</title>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<header class="top">
+<header class="site-header">
   <div class="wrap">
-    <h1>Helen Kasaei</h1>
+    <h1 class="site-title">Helen Kasaei</h1>
     <nav class="tabs" aria-label="Main navigation">
-      <a class="active" href="#home">Home</a>
-      <a href="#research">Research</a>
-      <a href="#education">Education</a>
+      <a href="index.html#home" aria-current="page">Home</a>
+      <a href="research.html">Research</a>
+      <a href="index.html#education">Education</a>
       <a href="cv.html">CV</a>
-      <button id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode" onclick="toggleTheme()"></button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" onclick="toggleTheme()"></button>
     </nav>
-    <button class="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" aria-label="Open menu">
+    <button class="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobile-menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       Menu
     </button>
-    <div id="mobile-menu" class="mobile-menu">
-      <a href="#home" onclick="closeMobileMenu()">Home</a>
-      <a href="#research" onclick="closeMobileMenu()">Research</a>
-      <a href="#education" onclick="closeMobileMenu()">Education</a>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+      <a href="index.html#home">Home</a>
+      <a href="research.html">Research</a>
+      <a href="index.html#education">Education</a>
       <a href="cv.html">CV</a>
-      <button type="button" onclick="toggleTheme()"><span id="mobile-theme-icon"></span><span id="mobile-theme-label">Dark Mode</span></button>
-    </div>
+      <button type="button" onclick="toggleTheme()"><span data-theme-toggle></span><span data-theme-label>Dark Mode</span></button>
+    </nav>
   </div>
 </header>
 
-<div class="wrap page-grid">
-  <main class="main-column">
+<main class="wrap home-grid">
+  <div class="main-column">
     <section class="intro" id="home">
       <p class="role">M.Sc. Candidate in Technology Management (Innovation)</p>
       <p class="affiliation"><a href="https://www.topuniversities.com/universities/university-isfahan">University of Isfahan</a>, Isfahan, Iran</p>
       <ul>
         <li>Research Title: <em>An Integrated Decision-Making Framework for Innovation and Product Strategy</em></li>
-        <li>Master’s thesis supervisor: <a href="https://www.researchgate.net/profile/Arash-Shahin" target="_blank" rel="noopener">Professor Arash Shahin</a>
-          <p class="supervisor-note">Professor Arash Shahin is a Full Professor in the Department of Management at the University of Isfahan. He earned his Ph.D. in Quality Engineering from Newcastle University, UK. His academic work includes quality engineering and management, innovation management, customer satisfaction, supply chain management, maintenance, energy, and performance management.</p>
+        <li>Case study: Entekhab Industrial Group (Snowa).</li>
+        <li>Master’s thesis supervisor: <a href="https://www.researchgate.net/profile/Arash-Shahin" target="_blank" rel="noopener noreferrer">Professor Arash Shahin</a>
+          <p class="supervisor-bio">Professor Arash Shahin is a Full Professor in the Department of Management at the University of Isfahan. He earned his Ph.D. in Quality Engineering from Newcastle University, UK. His academic work includes quality engineering and management, innovation management, customer satisfaction, supply chain management, maintenance, energy, and performance management.</p>
         </li>
+        <li>Currently applying for Ph.D. programs in Technology Management and Innovation Strategy.</li>
       </ul>
     </section>
 
-    <section id="research">
+    <section id="research-interests">
       <h2>Research Interests</h2><hr>
       <ul class="interests">
         <li>Technology and innovation strategy</li>
@@ -254,13 +55,15 @@
         <li>Radical, incremental, architectural, and disruptive innovation</li>
         <li>Strategic decision-making under technological and market uncertainty</li>
         <li>Multi-criteria decision-making, including TOPSIS, AHP, SMART, and Kano</li>
+        <li>Circular economy in the home appliances industry</li>
       </ul>
+      <p><a href="research.html">Research projects, working papers, and publications</a></p>
     </section>
 
     <section id="education">
       <h2>Education</h2><hr>
       <div class="edu-item">
-        <div class="edu-years">2024 – present</div>
+        <div class="edu-years">2024–present</div>
         <div>
           <h3>M.Sc. in Technology Management (Innovation)</h3>
           <p class="edu-note">Thesis in progress</p>
@@ -268,80 +71,35 @@
         </div>
       </div>
       <div class="edu-item">
-        <div class="edu-years">2020 – 2024</div>
+        <div class="edu-years">2020–2024</div>
         <div>
           <h3>B.Sc. in Industrial Management</h3>
           <p class="edu-school"><a href="https://www.topuniversities.com/universities/university-isfahan">University of Isfahan</a>, Isfahan, Iran</p>
         </div>
       </div>
       <div class="edu-item">
-        <div class="edu-years">2017 – 2020</div>
+        <div class="edu-years">2017–2020</div>
         <div>
           <h3>Diploma in Humanities</h3>
-          <p class="edu-school">NODET / Sampad, Isfahan, Iran</p>
+          <p class="edu-school">National Organization for Development of Exceptional Talents (NODET / Sampad), Isfahan, Iran</p>
         </div>
       </div>
     </section>
-  </main>
+  </div>
 
   <aside class="sidebar">
-    <img class="portrait" src="profile.jpg" alt="Helen Kasaei">
+    <img class="portrait" src="profile.jpg" alt="Portrait of Helen Kasaei">
     <div class="contact">
       <h2>Contact</h2><hr>
-      <div class="contact-row">
-        <a href="mailto:helenkasaei@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email
-        </a>
-      </div>
-      <div class="contact-row">
-        <a href="https://www.linkedin.com/in/helenkasaei" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3.5 9h3v12h-3zM9 9h2.9v1.6h.04A3.2 3.2 0 0 1 14.8 9c3.1 0 3.7 2 3.7 4.7V21h-3v-6.5c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V21H9z"/></svg>LinkedIn
-        </a>
-      </div>
-      <div class="contact-row">
-        <a href="https://github.com/helenkasaei" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.3-3.9-1.3-.5-1.3-1.3-1.6-1.3-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.7 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.1 11.1 0 0 0 12 .9Z"/></svg>GitHub
-        </a>
-      </div>
+      <div class="contact-row"><a href="mailto:helenkasaei@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email</a></div>
+      <div class="contact-row"><a href="https://www.linkedin.com/in/helenkasaei" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3.5 9h3v12h-3zM9 9h2.9v1.6h.04A3.2 3.2 0 0 1 14.8 9c3.1 0 3.7 2 3.7 4.7V21h-3v-6.5c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V21H9z"/></svg>LinkedIn</a></div>
+      <div class="contact-row"><a href="https://github.com/helenkasaei" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.3-3.9-1.3-.5-1.3-1.3-1.6-1.3-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.7 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.1 11.1 0 0 0 12 .9Z"/></svg>GitHub</a></div>
       <a class="cv-link" href="cv.html">Curriculum Vitae</a>
     </div>
   </aside>
-</div>
+</main>
 
-<footer><div class="wrap">Helen Kasaei · <a href="mailto:helenkasaei@gmail.com">helenkasaei@gmail.com</a></div></footer>
-
-<script>
-  var moonIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>';
-  var sunIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
-  function updateThemeIcons() {
-    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-    var toggle = document.getElementById('theme-toggle');
-    if (toggle) toggle.innerHTML = dark ? sunIcon : moonIcon;
-    var mobileIcon = document.getElementById('mobile-theme-icon');
-    var mobileLabel = document.getElementById('mobile-theme-label');
-    if (mobileIcon) mobileIcon.innerHTML = dark ? sunIcon : moonIcon;
-    if (mobileLabel) mobileLabel.textContent = dark ? 'Light Mode' : 'Dark Mode';
-  }
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    try { localStorage.setItem('helen-theme', theme); } catch (error) {}
-    updateThemeIcons();
-  }
-  function toggleTheme() {
-    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-    setTheme(dark ? 'light' : 'dark');
-  }
-  function toggleMobileMenu() {
-    document.getElementById('mobile-menu').classList.toggle('open');
-  }
-  function closeMobileMenu() {
-    document.getElementById('mobile-menu').classList.remove('open');
-  }
-  try {
-    var savedTheme = localStorage.getItem('helen-theme');
-    if (savedTheme === 'dark' || savedTheme === 'light') document.documentElement.setAttribute('data-theme', savedTheme);
-  } catch (error) {}
-  updateThemeIcons();
-</script>
+<footer class="site-footer"><div class="wrap">Helen Kasaei · <a href="mailto:helenkasaei@gmail.com">helenkasaei@gmail.com</a></div></footer>
+<script src="site.js"></script>
 </body>
 </html>

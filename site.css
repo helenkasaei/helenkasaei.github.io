@@ -24,7 +24,7 @@ body {
   background:var(--paper);
   color:var(--ink);
   font-family:var(--serif);
-  font-size:18px;
+  font-size:16px;
   line-height:1.6;
   transition:background .2s ease,color .2s ease;
 }
@@ -37,7 +37,7 @@ header.site-header { padding:42px 0 0; text-align:center; position:relative; }
 .site-title {
   margin:0 0 27px;
   color:var(--blue);
-  font-size:clamp(1.9rem,4.5vw,2.5rem);
+  font-size:clamp(1.45rem,2.4vw,1.6rem);
   font-weight:500;
 }
 nav.tabs {
@@ -46,7 +46,7 @@ nav.tabs {
   justify-content:center;
   align-items:center;
   flex-wrap:wrap;
-  gap:38px;
+  gap:30px;
   padding:13px 70px;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
@@ -128,7 +128,7 @@ section { padding:17px 0 20px; }
 section h2,.contact h2 {
   margin:0;
   color:var(--blue);
-  font-size:1.28rem;
+  font-size:1.12rem;
   font-weight:500;
 }
 section hr,.contact hr {
@@ -174,11 +174,11 @@ section hr,.contact hr {
   margin:0 0 28px;
   color:var(--blue);
   text-align:center;
-  font-size:1.8rem;
+  font-size:1.5rem;
   font-weight:500;
 }
 .research-section { padding:12px 0 24px; }
-.research-section h2 { font-size:1.3rem; }
+.research-section h2 { font-size:1.12rem; }
 .paper { padding:15px 0 19px; }
 .paper + .paper { border-top:1px solid var(--line); }
 .paper h3 { margin:0 0 7px; font-size:1.04rem; font-weight:600; }

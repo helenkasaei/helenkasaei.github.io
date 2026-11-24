@@ -178,6 +178,8 @@ section hr,.contact hr {
 .edu-card-body h4 { margin:0 0 4px; color:var(--ink); font-size:.96rem; font-weight:600; }
 .edu-card-body p { margin:5px 0 0; font-size:.9rem; }
 .edu-card-body .edu-gpa { color:var(--red); font-weight:600; }
+.edu-card-body .grade-equivalent { color:var(--slate); font-size:.86em; font-weight:400; }
+.grade-note { margin:10px 0 0; color:var(--slate); font-size:.8rem; }
 .sidebar { padding-top:0; }
 .portrait {
   display:block;

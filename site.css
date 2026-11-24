@@ -138,17 +138,46 @@ section hr,.contact hr {
 }
 .interests { margin:0; padding-left:21px; }
 .interests li { margin:6px 0; }
-.edu-item {
-  display:grid;
-  grid-template-columns:100px minmax(0,1fr);
-  gap:14px;
-  padding:10px 0 13px;
+.education-cards { display:grid; gap:13px; }
+.edu-card {
+  padding:15px 16px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:var(--soft);
 }
-.edu-item + .edu-item { border-top:1px solid var(--line); }
-.edu-years { color:var(--blue); font-size:.95rem; font-weight:600; }
-.edu-item h3 { margin:0; font-size:1rem; font-weight:600; }
-.edu-note { margin:0; color:var(--slate); font-size:.94rem; font-style:italic; }
-.edu-school { margin:7px 0 0; }
+.edu-card-header {
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr) auto;
+  gap:12px;
+  align-items:start;
+}
+.edu-logo {
+  width:44px;
+  height:44px;
+  padding:3px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:#fff;
+  object-fit:contain;
+}
+.edu-logo-text {
+  display:grid;
+  place-items:center;
+  padding:0;
+  border:0;
+  background:var(--blue);
+  color:#fff;
+  font-family:Arial,sans-serif;
+  font-size:.55rem;
+  font-weight:700;
+}
+.edu-institution h3 { margin:0; color:var(--blue); font-size:1rem; font-weight:500; }
+.edu-institution p { margin:2px 0 0; color:var(--slate); font-size:.88rem; }
+.edu-years { color:var(--slate); font-size:.83rem; font-style:italic; white-space:nowrap; }
+.edu-card-body { margin:13px 0 0 56px; }
+.edu-card-body h4 { margin:0 0 4px; color:var(--ink); font-size:.96rem; font-weight:600; }
+.edu-card-body p { margin:5px 0 0; font-size:.9rem; }
+.edu-card-body .edu-gpa { color:var(--red); font-weight:600; }
 .sidebar { padding-top:0; }
 .portrait {
   display:block;
